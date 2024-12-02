@@ -20,6 +20,6 @@ class MichaelScottQueueLincheckTest {
     @Test
     fun stressTest() = StressOptions()
         .iterations(100)
-        .threads(1)
+        .threads(2)
         .check(this::class)
 }
