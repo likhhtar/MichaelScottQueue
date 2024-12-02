@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("org.jetbrains.kotlin.jvm") version "1.9.0"
 }
 
 group = "org.example"
@@ -10,6 +11,7 @@ repositories {
 }
 
 dependencies {
+    implementation(kotlin("stdlib"))
     testImplementation(kotlin("test"))
     testImplementation("org.jetbrains.kotlinx:lincheck:2.15")
 }

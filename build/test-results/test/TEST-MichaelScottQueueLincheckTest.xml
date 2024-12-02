@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MichaelScottQueueLincheckTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-02T12:54:34" hostname="i113855116" time="7.914">
+  <properties/>
+  <testcase name="stressTest()" classname="MichaelScottQueueLincheckTest" time="7.914"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[To make verification faster, you can specify the state equivalence relation on your sequential specification.
+At the current moment, `MichaelScottQueueLincheckTest` does not specify it, or the equivalence relation implementation is incorrect.
+To fix this, please implement `equals()` and `hashCode()` functions on `MichaelScottQueueLincheckTest`; the simplest way is to extend `VerifierState`
+and override the `extractState()` function, which is called at once and the result of which is used for further `equals()` and `hashCode()` invocations.
+]]></system-err>
+</testsuite>

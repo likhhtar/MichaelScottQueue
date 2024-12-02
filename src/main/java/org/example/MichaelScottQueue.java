@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class LockFreeQueue<T> {
+public class MichaelScottQueue<T> {
     private static class Entry<T> {
         final AtomicReference<T> data;
         final AtomicReference<Entry<T>> next;
@@ -23,7 +23,7 @@ public class LockFreeQueue<T> {
     private final AtomicReference<Entry<T>> front;
     private final AtomicReference<Entry<T>> rear;
 
-    public LockFreeQueue() {
+    public MichaelScottQueue() {
         Entry<T> placeholder = new Entry<>();
         this.front = new AtomicReference<>(placeholder);
         this.rear = new AtomicReference<>(placeholder);
