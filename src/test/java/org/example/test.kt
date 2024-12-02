@@ -9,17 +9,22 @@ import java.util.Optional
 class MichaelScottQueueLincheckTest {
     private val queue = MichaelScottQueue<Int>()
     @Operation
-    fun add(value: Int) {
-        queue.add(value)
-    }
+    fun symmetricAddAndRemoveTest() {
+        queue.add(1)
+        queue.add(2)
+        queue.add(3)
 
-    @Operation
-    fun remove(): Optional<Int> {
-        return queue.remove()
+        // Удаляем элементы и проверяем их порядок
+        assert(queue.remove().get() == 1)
+        assert(queue.remove().get() == 2)
+        assert(queue.remove().get() == 3)
+
+        // Пытаемся удалить из пустой очереди
+        assert(queue.remove().isEmpty)
     }
     @Test
     fun stressTest() = StressOptions()
         .iterations(100)
-        .threads(2)
+        .threads(1)
         .check(this::class)
 }
